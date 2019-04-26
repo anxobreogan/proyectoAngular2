@@ -33,4 +33,6 @@ export class FormAltaComponent implements OnInit {
     this.productsservice.altaProducto(this.producto).subscribe()
   };
 
+
+
 }

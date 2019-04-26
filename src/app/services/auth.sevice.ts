@@ -20,9 +20,14 @@ export class AuthService {
   public user;
   public token;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+    this.token = localStorage.getItem('accessToken');
+  }
   headers: HttpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
+
+
   });
 
   registerUser(email: string, password: string) {
@@ -97,18 +102,12 @@ export class AuthService {
   }
   getToken() {
 
-    let token = JSON.parse(localStorage.getItem('accesToken'));
 
-    if (token != 'undefined') {
-      this.token = token;
-    } else {
-      this.token = null;
-    }
-
+    console.log(this.token);
     return this.token;
   }
 
-  getProducts(token) {
+  /* getProducts(token) {
 
     const url_api = 'http://localhost:8001/api/productos/listar';
     let headers = new HttpHeaders().set('Content-Type', 'application/json')
@@ -116,7 +115,7 @@ export class AuthService {
     return this.http.get(url_api, { headers: headers });
 
 
-  }
+  } */
 
 
   logoutUser() {

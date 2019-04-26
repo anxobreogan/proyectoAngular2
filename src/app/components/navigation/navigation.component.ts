@@ -6,13 +6,7 @@ import { JwtInterceptor } from 'src/app/services/jwt.interceptor';
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.sass'],
-  providers: [{
-
-    provide: HTTP_INTERCEPTORS,
-    useClass: JwtInterceptor,
-    multi: true,
-
-  }, AuthService]
+  providers: [AuthService]
 })
 export class NavigationComponent implements OnInit, DoCheck {
 
@@ -28,9 +22,9 @@ export class NavigationComponent implements OnInit, DoCheck {
 
 
   ngOnInit() {
-    /* this.onCheckUser(); */
+
     this.user = this.authService.getUser();
-    console.log(this.user);
+    /* console.log(this.user); */
 
   }
 
@@ -42,14 +36,7 @@ export class NavigationComponent implements OnInit, DoCheck {
     this.user = this.authService.getUser();
   }
 
-  /* onCheckUser(): void {
 
-    if (this.authService.getCurrentUSer() == null) {
-      this.isLogged = false;
-    } else {
-      this.isLogged = true;
-    }
-  } */
 
 
 

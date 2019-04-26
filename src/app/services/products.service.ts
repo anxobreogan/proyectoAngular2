@@ -22,9 +22,9 @@ export class ProductsService {
   altaProducto(producto: Producto) {
     return this.http.post(`${this.API_URI}/producto`, producto);
   }
-  bajaProdcuto(id: string) {
+  borrarProdcuto(id: string) {
 
-    return this.http.delete(`${this.API_URI}/products/${id}`);
+    return this.http.delete(`${this.API_URI}/producto/borrar/${id}`);
 
   }
 

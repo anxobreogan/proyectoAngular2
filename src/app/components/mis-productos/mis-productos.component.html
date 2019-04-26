@@ -1,0 +1,30 @@
+<div class="col-md-4" *ngFor="let listado of listadoProducto">
+  <div class="card text-center">
+    <div class="card-header">
+      {{listado.producto}}
+    </div>
+    <div class=" card-body">
+
+      <p>
+        {{listado.descripcioncorta}}
+      </p>
+      <p>
+        {{listado.descripcioncompleta}}
+      </p>
+      <p>
+        {{listado.precio}}
+      </p>
+
+      <a href="/products/alta" class=" btn- btn-info btn-block">
+        Editar
+      </a>
+      <button class=" btn- btn-info btn-block" (click)="borrarProducto(listado.idproducto)">
+        Borrar
+      </button>
+
+
+
+    </div>
+  </div>
+
+</div>

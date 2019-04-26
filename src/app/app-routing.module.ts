@@ -4,7 +4,7 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { FormAltaComponent } from './components/form-alta/form-alta.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { LoginComponent } from './components/user/login/login.component';
-
+import { MisProductosComponent } from './components/mis-productos/mis-productos.component';
 
 const routes: Routes = [
 
@@ -22,8 +22,6 @@ const routes: Routes = [
 
     path: 'products/alta',
     component: FormAltaComponent,
-
-
   },
   {
     path: 'user/register',
@@ -32,6 +30,10 @@ const routes: Routes = [
   {
     path: 'user/login',
     component: LoginComponent
+  },
+  {
+    path: 'mis-productos',
+    component: MisProductosComponent
   }
 
 

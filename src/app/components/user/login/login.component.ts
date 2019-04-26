@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
         data => {
           console.log(data);
           localStorage.setItem('user', JSON.stringify(data.email));
-          localStorage.setItem('accessToken', data.accessToken);
+          localStorage.setItem('accessToken', (data.accessToken));
+          /* console.log(this.authService.getToken()) */;
           /* console.log(data); */
           /* let token = "JWT " + data.accessToken;
           localStorage.setItem('auth', token);
