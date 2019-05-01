@@ -15,7 +15,7 @@
         {{listado.precio}}
       </p>
 
-      <a href="/products/alta" class=" btn- btn-info btn-block">
+      <a [routerLink]="['/products/actualizar',listado.idproducto]" class=" btn- btn-info btn-block">
         Editar
       </a>
       <button class=" btn- btn-info btn-block" (click)="borrarProducto(listado.idproducto)">

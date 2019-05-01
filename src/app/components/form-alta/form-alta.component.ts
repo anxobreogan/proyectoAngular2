@@ -15,7 +15,9 @@ export class FormAltaComponent implements OnInit {
     producto: '',
     precio: '',
     descripcioncorta: '',
-    descripcioncompleta: ''
+    descripcioncompleta: '',
+    uuid: localStorage.getItem('uuid'),
+    idlocalizacion: ''
 
 
 
@@ -28,9 +30,10 @@ export class FormAltaComponent implements OnInit {
 
   anadirProducto() {
 
-    /* delete this.producto.idproducto; */
+
 
     this.productsservice.altaProducto(this.producto).subscribe()
+    console.log(this.producto);
   };
 
 

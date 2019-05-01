@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.sevice';
+import { ProductsService } from './services/products.service';
 
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from './services/auth.sevice';
   styleUrls: ['./app.component.scss'],
   providers: [AuthService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public title: string;
   public user;
 
@@ -19,8 +20,11 @@ export class AppComponent {
 
   ngOnInit() {
 
-    /* this.user = this._authService.getUser();
-    console.log(this.user); */
+
   }
+
+
+
+
 
 }

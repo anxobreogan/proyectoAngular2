@@ -19,14 +19,15 @@ export class AuthService {
   public currentUser;
   public user;
   public token;
+  public uuid;
 
   constructor(private http: HttpClient) {
 
     this.token = localStorage.getItem('accessToken');
+    this.uuid = localStorage.getItem('uuid');
   }
   headers: HttpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
-
 
   });
 
@@ -100,6 +101,8 @@ export class AuthService {
 
     return this.user;
   }
+
+
   getToken() {
 
 
@@ -107,15 +110,7 @@ export class AuthService {
     return this.token;
   }
 
-  /* getProducts(token) {
 
-    const url_api = 'http://localhost:8001/api/productos/listar';
-    let headers = new HttpHeaders().set('Content-Type', 'application/json')
-      .set('Authorization', token);
-    return this.http.get(url_api, { headers: headers });
-
-
-  } */
 
 
   logoutUser() {

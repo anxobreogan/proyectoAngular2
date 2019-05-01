@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
-import { Producto } from '../models/producto';
+import { Producto, CestaInterface } from '../models/producto';
+import { ProductsListComponent } from '../components/products-list/products-list.component';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,9 @@ export class ProductsService {
   getProducts() {
     return this.http.get(`${this.API_URI}/producto/listar`);
   }
+  getMyProducts(uuid: string) {
+    return this.http.get(`${this.API_URI}/producto/filtrarPorUser/${uuid}`);
+  }
   getProduct(id: string) {
     return this.http.get(`${this.API_URI}/products/${id}`);
   }
@@ -27,6 +31,19 @@ export class ProductsService {
     return this.http.delete(`${this.API_URI}/producto/borrar/${id}`);
 
   }
+
+  getCesta() {
+
+    return this.http.get(`${this.API_URI}/producto/cesta/listar`);
+  }
+
+  addCesta(idproducto) {
+
+    return this.http.post(`${this.API_URI}/producto/cesta/${idproducto}`, idproducto);
+
+  }
+
+
 
 
 

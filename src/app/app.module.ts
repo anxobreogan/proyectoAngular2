@@ -17,6 +17,7 @@ import { RegisterComponent } from './components/user/register/register.component
 import { LoginComponent } from './components/user/login/login.component';
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { MisProductosComponent } from './components/mis-productos/mis-productos.component';
+import { CestaComponent } from './components/cesta/cesta.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { MisProductosComponent } from './components/mis-productos/mis-productos.
     RegisterComponent,
     LoginComponent,
     MisProductosComponent,
+    CestaComponent,
 
   ],
   imports: [

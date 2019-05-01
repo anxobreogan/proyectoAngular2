@@ -5,6 +5,7 @@ import { FormAltaComponent } from './components/form-alta/form-alta.component';
 import { RegisterComponent } from './components/user/register/register.component';
 import { LoginComponent } from './components/user/login/login.component';
 import { MisProductosComponent } from './components/mis-productos/mis-productos.component';
+import { CestaComponent } from './components/cesta/cesta.component';
 
 const routes: Routes = [
 
@@ -34,6 +35,14 @@ const routes: Routes = [
   {
     path: 'mis-productos',
     component: MisProductosComponent
+  },
+  {
+    path: 'cesta',
+    component: CestaComponent
+  },
+  {
+    path: 'products/actualizar/:idproducto',
+    component: FormAltaComponent
   }
 
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { AuthService } from 'src/app/services/auth.sevice';
 import { UserInterface } from 'src/app/models/user-interface';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { UserInterface } from 'src/app/models/user-interface';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public authService: AuthService) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
 
 
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
 
 
   ngOnInit() {
+    /*this.user = this.authService.getUser();*/
   }
   onLogin() {
     return this.authService
@@ -32,6 +34,8 @@ export class LoginComponent implements OnInit {
           console.log(data);
           localStorage.setItem('user', JSON.stringify(data.email));
           localStorage.setItem('accessToken', (data.accessToken));
+          let prueba = localStorage.setItem('uuid', (data.uuid));
+          /*console.log(prueba);*/
           /* console.log(this.authService.getToken()) */;
           /* console.log(data); */
           /* let token = "JWT " + data.accessToken;
@@ -40,13 +44,30 @@ export class LoginComponent implements OnInit {
           /* console.log(data.uuid); */
           /* let item2 = localStorage.getItem('currentUser'); */
           /* console.log(item2); */
+          window.location.replace("http://localhost:4200/products");
+
+
         },
+
         error => console.log(error)
 
         //TODO:mirar el set token...aqui declarándolo va.
       );
 
+
+
+
+
+
   }
+
+  /*goMisProductos() {
+
+    this.router.navigate(['/products']);
+  }*/
+
+
+
 
 
 

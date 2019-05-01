@@ -17,6 +17,10 @@
           <input type="text" name="Descripcion completa" [(ngModel)]="producto.descripcioncompleta"
             placeholder="Descripcion completa" class="form-control">
         </div>
+        <div class="form-group">
+          <input type="text" name="Ayuntamiento" [(ngModel)]="producto.idlocalizacion" placeholder="Ayuntamiento"
+            class="form-control">
+        </div>
         <button class="btn btn-success btn-block" (click)="anadirProducto()">
           Añadir
         </button>

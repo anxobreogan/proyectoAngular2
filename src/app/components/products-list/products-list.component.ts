@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ProductsService } from '../../services/products.service';
-
+import { CestaInterface } from '../../models/producto';
 @Component({
   selector: 'app-products-list',
   templateUrl: './products-list.component.html',
@@ -9,7 +9,10 @@ import { ProductsService } from '../../services/products.service';
 })
 export class ProductsListComponent implements OnInit {
 
-  listadoProducto: any = [];
+  public listadoProducto: any = [];
+
+  public producto;
+
 
   constructor(private productsService: ProductsService) {
 
@@ -25,6 +28,19 @@ export class ProductsListComponent implements OnInit {
       err => console.error(err)
     );
   }
+
+  addCesta() {
+
+
+
+    this.productsService.addCesta(this.listadoProducto.idproducto).subscribe();
+    console.log(this.listadoProducto.idproducto);
+
+
+
+  }
+
+
 
 
 }

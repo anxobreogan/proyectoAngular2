@@ -1,4 +1,4 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.sevice';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from 'src/app/services/jwt.interceptor';
@@ -8,7 +8,8 @@ import { JwtInterceptor } from 'src/app/services/jwt.interceptor';
   styleUrls: ['./navigation.component.sass'],
   providers: [AuthService]
 })
-export class NavigationComponent implements OnInit, DoCheck {
+
+export class NavigationComponent implements OnInit {
 
   constructor(public authService: AuthService) { }
 
@@ -24,7 +25,7 @@ export class NavigationComponent implements OnInit, DoCheck {
   ngOnInit() {
 
     this.user = this.authService.getUser();
-    /* console.log(this.user); */
+
 
   }
 
@@ -32,9 +33,9 @@ export class NavigationComponent implements OnInit, DoCheck {
     this.authService.logoutUser();
   }
 
-  ngDoCheck() {
-    this.user = this.authService.getUser();
-  }
+
+
+
 
 
 

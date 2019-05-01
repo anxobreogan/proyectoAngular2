@@ -1,6 +1,6 @@
-import { Component, OnInit, DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
-import { getNumberOfCurrencyDigits } from '@angular/common';
+
 
 @Component({
   selector: 'app-mis-productos',
@@ -13,16 +13,18 @@ export class MisProductosComponent implements OnInit {
 
   public refresh;
 
-  constructor(private misProductos: ProductsService) { }
+  public uuid;
 
+  public user;
 
-
-
+  constructor(private misProductos: ProductsService) {
+    this.uuid = localStorage.getItem('uuid');
+  }
 
 
   ngOnInit() {
 
-    this.misProductos.getProducts().subscribe(
+    this.misProductos.getMyProducts(this.uuid).subscribe(
       res => {
         this.listadoProducto = res;
         /* console.log(res); */
@@ -31,29 +33,27 @@ export class MisProductosComponent implements OnInit {
     );
   }
 
-
-
-
-
   borrarProducto(idproducto: string) {
 
     this.misProductos.borrarProdcuto(idproducto).subscribe(
       res => {
         console.log(res);
+        window.location.reload();
 
       },
-
-
-
       err => console.log(err)
     );
-
-
-
   }
 
+  // actualizarProducto(idproducto) {
+
+  //   console.log(idproducto);
+
+  // }
+
+  /*filter() {
+    this.listadoProducto.filter(item => item);
 
 
-
-
+  }*/
 }

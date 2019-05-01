@@ -1,4 +1,7 @@
 <div class="col-md-4" *ngFor="let listado of listadoProducto">
+
+  <!-- {{listado.uuid | json}}
+  {{listado.idproducto| json}} -->
   <div class="card text-center">
     <div class="card-header">
       {{listado.producto}}
@@ -7,6 +10,7 @@
 
       <p>
         {{listado.descripcioncorta}}
+        {{listado.id}}
       </p>
       <p>
         {{listado.descripcioncompleta}}
@@ -14,10 +18,16 @@
       <p>
         {{listado.precio}}
       </p>
+      <p>
+        {{listado.idlocalizacion== 2 ? 'Ferrol': 'Coruña'}}
+      </p>
 
-      <a href="" class=" btn- btn-info btn-block">
+      <!-- <a href="" class=" btn- btn-info btn-block" (click)="addCesta()">
         Añadir a cesta
-      </a>
+      </a> -->
+
+      <button type="submit" class="btn btn-sm btn-primary btn-block"
+        (click)="addCesta(listado.idproducto)">Añadir</button>
 
 
 
