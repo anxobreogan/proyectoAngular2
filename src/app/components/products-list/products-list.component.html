@@ -1,37 +1,42 @@
-<div class="col-md-4" *ngFor="let listado of listadoProducto">
+<div class="row">
 
-  <!-- {{listado.uuid | json}}
-  {{listado.idproducto| json}} -->
-  <div class="card text-center">
-    <div class="card-header">
-      {{listado.producto}}
+  <div class="col-md-4" *ngFor="let listado of listadoProducto">
+
+    <!-- {{listado.uuid | json}}
+    {{listado.idproducto| json}} -->
+    <div class="card text-center">
+      <div class="card-header">
+        {{listado.producto}}
+      </div>
+      <div class=" card-body">
+
+        <p>
+          {{listado.descripcioncorta}}
+          {{listado.id}}
+        </p>
+        <p>
+          {{listado.descripcioncompleta}}
+        </p>
+        <p>
+          {{listado.precio}}
+        </p>
+        <p>
+          {{listado.idlocalizacion== 2 ? 'Ferrol': 'Coruña'}}
+        </p>
+
+        <!-- <a href="" class=" btn- btn-info btn-block" (click)="addCesta()">
+          Añadir a cesta
+        </a> -->
+
+        <button type="submit" class="btn btn-sm btn-primary btn-block"
+          (click)="addCesta(listado.idproducto)">Añadir</button>
+
+
+
+      </div>
     </div>
-    <div class=" card-body">
 
-      <p>
-        {{listado.descripcioncorta}}
-        {{listado.id}}
-      </p>
-      <p>
-        {{listado.descripcioncompleta}}
-      </p>
-      <p>
-        {{listado.precio}}
-      </p>
-      <p>
-        {{listado.idlocalizacion== 2 ? 'Ferrol': 'Coruña'}}
-      </p>
-
-      <!-- <a href="" class=" btn- btn-info btn-block" (click)="addCesta()">
-        Añadir a cesta
-      </a> -->
-
-      <button type="submit" class="btn btn-sm btn-primary btn-block"
-        (click)="addCesta(listado.idproducto)">Añadir</button>
-
-
-
-    </div>
   </div>
+
 
 </div>

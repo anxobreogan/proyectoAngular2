@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from '../../models/producto';
 import { ProductsService } from '../../services/products.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-form-alta',
@@ -23,9 +24,23 @@ export class FormAltaComponent implements OnInit {
 
   };
 
-  constructor(private productsservice: ProductsService) { }
+  constructor(private productsservice: ProductsService, private router: Router, private acitvatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+
+    const params = this.acitvatedRoute.snapshot.params;
+
+    console.log(params);
+
+    // if (params.id) {
+    //   this.productsservice.getProduct(params.id).subscribe(
+    //     res=>{
+    //       console.log(res);
+    //     },
+    //     err=> console.log(err)
+    //   )
+    // }
+
   }
 
   anadirProducto() {
