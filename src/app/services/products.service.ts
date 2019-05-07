@@ -42,6 +42,9 @@ export class ProductsService {
     return this.http.post(`${this.API_URI}/producto/cesta/${idproducto}`, idproducto);
 
   }
+  getProductoId(id: string) {
+    return this.http.get(`${this.API_URI}/producto/listarproducto/${id}`);
+  }
 
 
 

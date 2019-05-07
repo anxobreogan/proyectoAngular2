@@ -24,6 +24,8 @@ export class FormAltaComponent implements OnInit {
 
   };
 
+  edit: boolean = false;
+
   constructor(private productsservice: ProductsService, private router: Router, private acitvatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
@@ -32,14 +34,17 @@ export class FormAltaComponent implements OnInit {
 
     console.log(params);
 
-    // if (params.id) {
-    //   this.productsservice.getProduct(params.id).subscribe(
-    //     res=>{
-    //       console.log(res);
-    //     },
-    //     err=> console.log(err)
-    //   )
-    // }
+    if (params.idproducto) {
+      // console.log(params.idproducto);
+      this.productsservice.getProductoId(params.idproducto).subscribe(
+        res => {
+          console.log(res[0]);
+          this.producto = res[0];
+          this.edit = true;
+        },
+        err => console.log(err)
+      )
+    }
 
   }
 
@@ -49,7 +54,12 @@ export class FormAltaComponent implements OnInit {
 
     this.productsservice.altaProducto(this.producto).subscribe()
     console.log(this.producto);
+
   };
+
+  actualizarProducto() {
+    console.log(this.producto);
+  }
 
 
 

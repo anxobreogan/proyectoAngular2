@@ -11,28 +11,42 @@
 
     <ul class="navbar-nav ml-auto">
 
-      <li class="nav-item" *ngIf="user">
-        <a class="nav-link" routerLink="/cesta">Mi cesta</a>
+      <li class="nav-item " *ngIf="user">
+        <a class="nav-link" routerLink="/cesta">
+          <h2>Mi cesta</h2>
+        </a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" routerLink="/products">Productos</a>
+        <a class="nav-link" routerLink="/products">
+          <h2>Productos</h2>
+        </a>
       </li>
 
       <li class="nav-item" *ngIf="user">
-        <a class="nav-link" routerLink="/products/alta">Alta Productos</a>
+        <a class="nav-link" routerLink="/products/alta">
+          <h2>Alta Productos</h2>
+        </a>
       </li>
       <li class="nav-item" *ngIf="user">
-        <a class="nav-link" routerLink="/mis-productos">Mis Productos</a>
+        <a class="nav-link" routerLink="/mis-productos">
+          <h2>Mis Productos</h2>
+        </a>
       </li>
       <li class="nav-item" *ngIf="!user">
-        <a class="nav-link" routerLink="/user/login">Login</a>
+        <a class="nav-link" routerLink="/user/login">
+          <h2>Login</h2>
+        </a>
       </li>
       <li class="nav-item" *ngIf="user">
-        <a href="/"><button type="button" class="btn btn-light" (click)="onLogout()">Logout</button></a>
+        <a href="/"><button type="button" class="btn btn-light" (click)="onLogout()">
+            <h2>Logout</h2>
+          </button></a>
       </li>
       <li class="nav-item" *ngIf="!user">
-        <a class="nav-link" routerLink="/user/register">Register</a>
+        <a class="nav-link" routerLink="/user/register">
+          <h2>Register</h2>
+        </a>
       </li>
 
 

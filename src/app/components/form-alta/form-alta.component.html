@@ -21,7 +21,7 @@
           <input type="text" name="Ayuntamiento" [(ngModel)]="producto.idlocalizacion" placeholder="Ayuntamiento"
             class="form-control">
         </div>
-        <button class="btn btn-success btn-block" (click)="anadirProducto()">
+        <button class="btn btn-success btn-block" (click)="edit ? actualizarProducto():  anadirProducto()">
           Añadir
         </button>
       </form>
