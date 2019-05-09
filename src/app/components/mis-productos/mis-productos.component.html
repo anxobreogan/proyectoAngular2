@@ -5,11 +5,12 @@
       <div class="card-header">
         {{listado.producto}}
       </div>
+      <img [src]='listado?.descripcioncorta' class="card-img-top" width=100px, height=200px>
       <div class=" card-body">
 
-        <p>
+        <!-- <p>
           {{listado.descripcioncorta}}
-        </p>
+        </p> -->
         <p>
           {{listado.descripcioncompleta}}
         </p>
@@ -17,9 +18,9 @@
           {{listado.precio}}
         </p>
 
-        <a [routerLink]="['/products/actualizar',listado.idproducto]" class=" btn- btn-info btn-block">
+        <!-- <a [routerLink]="['/products/actualizar',listado.idproducto]" class=" btn- btn-info btn-block">
           Editar
-        </a>
+        </a> -->
         <button class=" btn- btn-info btn-block" (click)="borrarProducto(listado.idproducto)">
           Borrar
         </button>
